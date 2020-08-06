@@ -26,3 +26,13 @@ def get_count(input_str):
     if i in "AEIOUaeiou":
       num_vowels = num_vowels + 1
   return num_vowels
+
+# best practice
+
+def get_count(input_str):
+  return sum(1 for let in input_str if let in "aeiouAEIOU")
+
+# Second best practice but I think is more readable
+
+def get_count(input_str):
+  return sun(i in 'aeiou' for i in input_str)
