@@ -15,3 +15,14 @@ def square_digits(num):
   for x in str(num)
     ret += str(int(x)**2)
   return int(ret)
+
+# Return the number (count) of vowels in the given string.
+# We will consider AEIOU not Y as vowels
+# Input string will only consist of lower case letters and/or spaces.
+
+def get_count(input_str):
+  num_vowels = 0
+  for i in input_str:
+    if i in "AEIOUaeiou":
+      num_vowels = num_vowels + 1
+  return num_vowels
