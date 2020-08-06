@@ -36,3 +36,21 @@ def get_count(input_str):
 
 def get_count(input_str):
   return sun(i in 'aeiou' for i in input_str)
+
+# Square(n)Sum
+# Complete the square sum function so that it squared each number
+# passed into it and then sums the results together.
+# For example, for [1,2,2] it should return 9
+# 8/6/2020
+# 8kyu
+
+def square_sum(numbers):
+  total_sum = 0
+  for i in numbers:
+    total_sum = i * i + total_sum
+  return total_sum
+
+# refactored/best practice
+
+def square_sum(numbers):
+  return sum(i ** 2 for i in numbers)
