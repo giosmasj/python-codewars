@@ -35,7 +35,7 @@ def get_count(input_str):
 # Second best practice but I think is more readable
 
 def get_count(input_str):
-  return sun(i in 'aeiou' for i in input_str)
+  return sum(i in 'aeiou' for i in input_str)
 
 # Square(n)Sum
 # Complete the square sum function so that it squared each number
@@ -54,3 +54,12 @@ def square_sum(numbers):
 
 def square_sum(numbers):
   return sum(i ** 2 for i in numbers)
+
+# Array.diff
+# Your goal in this kata is to implement a difference function,
+# which subtracts one list from another and returns the result.
+# It should remove all values from list a, which are present in list b
+# If a value is present in b, all of its occurences must be removed from the other
+
+def array_diff(a, b)
+  return [i for i in a if i not in b]
