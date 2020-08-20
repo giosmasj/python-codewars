@@ -80,6 +80,17 @@ def unique_in_order(iterable):
   for char in iterable:
     if char != prev:
       uniques.append(char)
-    prev = char
+      prev = char
 
   return uniques
+
+# below is best practice
+
+def unique_in_order(iterable):
+  result = []
+  prev = None
+  for char in iterable[0:]:
+    if char != prev:
+      result.append(char)
+      prev = char
+  return result
