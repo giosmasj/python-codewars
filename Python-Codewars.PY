@@ -267,3 +267,9 @@ def sort_array(source_array):
 
 def DNA_strand(dna):
   return dna.translate(str.maketrans('AaTtCcGg', 'TtAaGgCc'))
+
+# best practice, again I love Python bc it's pretty similar to my solution
+
+def DNA_strand(dna):
+  return dna.translate(string.maketrans("ATCG", "TAGC"))
+
