@@ -5,37 +5,37 @@
 # 7kyu
 # 8/3/2020
 
-def square_digits(num):
-  return int(''.join(str(int(i)**2)for i in str(num)))
+# def square_digits(num):
+#   return int(''.join(str(int(i)**2)for i in str(num)))
 
 # best practice
 
-def square_digits(num):
-  ret = ''
-  for x in str(num)
-    ret += str(int(x)**2)
-  return int(ret)
+# def square_digits(num):
+#   ret = ''
+#   for x in str(num)
+#     ret += str(int(x)**2)
+#   return int(ret)
 
 # Return the number (count) of vowels in the given string.
 # We will consider AEIOU not Y as vowels
 # Input string will only consist of lower case letters and/or spaces.
 
-def get_count(input_str):
-  num_vowels = 0
-  for i in input_str:
-    if i in "AEIOUaeiou":
-      num_vowels = num_vowels + 1
-  return num_vowels
+# def get_count(input_str):
+#   num_vowels = 0
+#   for i in input_str:
+#     if i in "AEIOUaeiou":
+#       num_vowels = num_vowels + 1
+#   return num_vowels
 
 # best practice
 
-def get_count(input_str):
-  return sum(1 for let in input_str if let in "aeiouAEIOU")
+# def get_count(input_str):
+#   return sum(1 for let in input_str if let in "aeiouAEIOU")
 
 # Second best practice but I think is more readable
 
-def get_count(input_str):
-  return sum(i in 'aeiou' for i in input_str)
+# def get_count(input_str):
+#   return sum(i in 'aeiou' for i in input_str)
 
 # Square(n)Sum
 # Complete the square sum function so that it squared each number
@@ -44,16 +44,16 @@ def get_count(input_str):
 # 8/6/2020
 # 8kyu
 
-def square_sum(numbers):
-  total_sum = 0
-  for i in numbers:
-    total_sum = i * i + total_sum
-  return total_sum
+# def square_sum(numbers):
+#   total_sum = 0
+#   for i in numbers:
+#     total_sum = i * i + total_sum
+#   return total_sum
 
 # refactored/best practice
 
-def square_sum(numbers):
-  return sum(i ** 2 for i in numbers)
+# def square_sum(numbers):
+#   return sum(i ** 2 for i in numbers)
 
 # Array.diff
 # Your goal in this kata is to implement a difference function,
@@ -61,8 +61,8 @@ def square_sum(numbers):
 # It should remove all values from list a, which are present in list b
 # If a value is present in b, all of its occurences must be removed from the other
 
-def array_diff(a, b)
-  return [i for i in a if i not in b]
+# def array_diff(a, b)
+#   return [i for i in a if i not in b]
 
 # Implement the function unique_in_order which takes as argument a sequence and returns a list of items without any elements with the same value next to each other and preserving the original order of elements.
 
@@ -74,26 +74,26 @@ def array_diff(a, b)
 # 6kyu
 # 8/20/2020
 
-def unique_in_order(iterable):
-  uniques = []
-  prev = None
-  for char in iterable:
-    if char != prev:
-      uniques.append(char)
-      prev = char
+# def unique_in_order(iterable):
+#   uniques = []
+#   prev = None
+#   for char in iterable:
+#     if char != prev:
+#       uniques.append(char)
+#       prev = char
 
-  return uniques
+#   return uniques
 
 # below is best practice
 
-def unique_in_order(iterable):
-  result = []
-  prev = None
-  for char in iterable[0:]:
-    if char != prev:
-      result.append(char)
-      prev = char
-  return result
+# def unique_in_order(iterable):
+#   result = []
+#   prev = None
+#   for char in iterable[0:]:
+#     if char != prev:
+#       result.append(char)
+#       prev = char
+#   return result
 
 # In a small town the population is p0 = 1000 at the beginning of a year.
 # The population regularly increases by 2 percent per year and moreover
@@ -132,23 +132,23 @@ def unique_in_order(iterable):
 # 7ku
 # 8/24/2020
 
-def nb_year(p0, percent, aug, p):
-  n = 0
-  while p0 < p:
-    n = n + 1
-    p0 = p0 + (p0 * percent/100) + aug
+# def nb_year(p0, percent, aug, p):
+#   n = 0
+#   while p0 < p:
+#     n = n + 1
+#     p0 = p0 + (p0 * percent/100) + aug
 
-    if p0 >= p:
-      return n
+#     if p0 >= p:
+#       return n
 
 # best practice
 
-def nb_year(p0, percent, aug, p):
-  n = 0
-  while p0 < p:
-    p0 += p0 * percent / 100. + aug
-    n += 1
-  return n
+# def nb_year(p0, percent, aug, p):
+#   n = 0
+#   while p0 < p:
+#     p0 += p0 * percent / 100. + aug
+#     n += 1
+#   return n
 
 # Mr. Scrooge has a sum of money 'P' that he wants to invest. Before he
 # does, he wants to know how many years 'Y' this sum 'P' has to be kept
@@ -188,29 +188,29 @@ def nb_year(p0, percent, aug, p):
 # 8/25/2020
 # Super similar to yesterday's Kata
 
-def calculate_years(principal, interest, tax, desired):
-    n = 0
+# def calculate_years(principal, interest, tax, desired):
+#     n = 0
     
-    if desired == principal:
-        n = 0
+#     if desired == principal:
+#         n = 0
     
-    while principal < desired:
-        principal = principal + ((interest * principal) * (1 - tax))
-        n = n + 1
+#     while principal < desired:
+#         principal = principal + ((interest * principal) * (1 - tax))
+#         n = n + 1
         
-    return n
+#     return n
 
 # Best practice solution, again don't need the if statement I used in
 # my solution, also += instead of reassigning value, pretty similar otherwise.
 
-def calculate_years(principal, interest, tax, desired):
-    years = 0
+# def calculate_years(principal, interest, tax, desired):
+#     years = 0
     
-    while principal < desired:
-        principal += (interest * principal) * (1 - tax)
-        years += 1
+#     while principal < desired:
+#         principal += (interest * principal) * (1 - tax)
+#         years += 1
         
-    return years
+#     return years
 
 # You have an array of numbers.
 # Your task is to sort ascending odd numbers but even numbers must be on
@@ -242,9 +242,9 @@ def calculate_years(principal, interest, tax, desired):
 # reverse and using .pop() made this much simpler but was definitely
 # a challenge for sure
 
-def sort_array(source_array):
-  odds = sorted((i for i in source_array if i % 2 != 0), reverse = True)
-  return [i if i % 2 == 0 else odds.pop() for i in source_array]
+# def sort_array(source_array):
+#   odds = sorted((i for i in source_array if i % 2 != 0), reverse = True)
+#   return [i if i % 2 == 0 else odds.pop() for i in source_array]
 
 # Deoxyribonucleic acid (DNA) is a chemical found in the nucleus of cells and carries the "instructions" for the development and functioning of living organisms.
 
@@ -265,11 +265,39 @@ def sort_array(source_array):
 # Went a totally different route at first then discovered translate!
 # Python gets cooler to me everyday!
 
-def DNA_strand(dna):
-  return dna.translate(str.maketrans('AaTtCcGg', 'TtAaGgCc'))
+# def DNA_strand(dna):
+#   return dna.translate(str.maketrans('AaTtCcGg', 'TtAaGgCc'))
 
 # best practice, again I love Python bc it's pretty similar to my solution
 
-def DNA_strand(dna):
-  return dna.translate(string.maketrans("ATCG", "TAGC"))
+# def DNA_strand(dna):
+#   return dna.translate(string.maketrans("ATCG", "TAGC"))
 
+# Write a function, persistence, that takes in a positive parameter num
+# and returns its multiplicative persistence, which is the number of
+# times you must multiply the digits in num until you reach a single
+# digit.
+
+# For example:
+
+#  persistence(39) => 3  Because 3*9 = 27, 2*7 = 14, 1*4=4
+#                        and 4 has only one digit.
+
+#  persistence(999) => 4 Because 9*9*9 = 729, 7*2*9 = 126,
+#                        1*2*6 = 12, and finally 1*2 = 2.
+
+#  persistence(4) => 0   Because 4 is already a one-digit number.
+# 6kyu 8/31/2020
+# I had no idea what a multiplicative persistence was, so I learned
+# more than some code today. Inspired a blog post.
+
+def persistence(n):
+  multiplicative_persistence = 0
+  while n > 9:
+    multiplicative_persistence += 1
+    total = 1
+    n_as_string = str(n)
+    for i in n_as_string:
+      total = total * int(i)
+      n = total
+  return multiplicative_persistence
