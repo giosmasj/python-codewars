@@ -291,23 +291,47 @@
 # I had no idea what a multiplicative persistence was, so I learned
 # more than some code today. Inspired a blog post.
 
-def persistence(n):
-  multiplicative_persistence = 0
-  while n > 9:
-    multiplicative_persistence += 1
-    total = 1
-    n_as_string = str(n)
-    for i in n_as_string:
-      total = total * int(i)
-      n = total
-  return multiplicative_persistence
+# def persistence(n):
+#   multiplicative_persistence = 0
+#   while n > 9:
+#     multiplicative_persistence += 1
+#     total = 1
+#     n_as_string = str(n)
+#     for i in n_as_string:
+#       total = total * int(i)
+#       n = total
+#   return multiplicative_persistence
 
 # best practice
 
-import operator
-def persistence(n):
-  i = 0
-  while n >= 10:
-    n = reduce(operator.mul, [int(x) for x in str(n)], 1)
-    i += 1
-  return i
+# import operator
+# def persistence(n):
+#   i = 0
+#   while n >= 10:
+#     n = reduce(operator.mul, [int(x) for x in str(n)], 1)
+#     i += 1
+#   return i
+
+# Count the number of divisors of a positive integer n.
+
+# Random tests go up to n = 500000.
+
+# Examples
+# divisors(4)  = 3  // 1, 2, 4
+# divisors(5)  = 2  // 1, 5
+# divisors(12) = 6  // 1, 2, 3, 4, 6, 12
+# divisors(30) = 8  // 1, 2, 3, 5, 6, 10, 15, 30
+# 7kyu, completed in JS but originally solved it by completing it in
+# Python
+# 9/1/2020
+# not sure why when I execute this code it does not return the correct
+# answer?
+
+def divisors(n):
+    count = 0
+    div_by = 0
+    while n > div_by:
+        div_by += 1
+        if n % div_by == 0:
+            count += 1
+    return count
