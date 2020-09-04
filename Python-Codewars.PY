@@ -335,3 +335,18 @@ def divisors(n):
         if n % div_by == 0:
             count += 1
     return count
+
+# Complete the solution so that it returns true if the first argument(string)
+# passed in ends with the 2nd argument (also a string).
+
+# Examples:
+
+# solution('abc', 'bc') returns true
+# solution('abc', 'd') returns false
+# I've seen an endswith() method before and worked very well here
+# Simple as that!
+# 7kyu
+# 9/4/2020
+
+def solution(string, ending):
+    return string.endswith(ending)
