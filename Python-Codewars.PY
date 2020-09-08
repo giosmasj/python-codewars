@@ -369,3 +369,8 @@ def disemvowel(string):
     for vowel in vowels:
         string = string.replace(vowel, '')
     return string
+
+# best practice
+
+def disemvowel(string):
+    return string.translate(None, 'aeiouAEIOU')
