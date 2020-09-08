@@ -327,14 +327,14 @@
 # not sure why when I execute this code it does not return the correct
 # answer?
 
-def divisors(n):
-    count = 0
-    div_by = 0
-    while n > div_by:
-        div_by += 1
-        if n % div_by == 0:
-            count += 1
-    return count
+# def divisors(n):
+#     count = 0
+#     div_by = 0
+#     while n > div_by:
+#         div_by += 1
+#         if n % div_by == 0:
+#             count += 1
+#     return count
 
 # Complete the solution so that it returns true if the first argument(string)
 # passed in ends with the 2nd argument (also a string).
@@ -348,5 +348,24 @@ def divisors(n):
 # 7kyu
 # 9/4/2020
 
-def solution(string, ending):
-    return string.endswith(ending)
+# def solution(string, ending):
+#     return string.endswith(ending)
+
+# Trolls are attacking your comment section!
+
+# A common way to deal with this situation is to remove all of the vowels
+# from the trolls' comments, neutralizing the threat.
+
+# Your task is to write a function that takes a string and return a new
+# string with all vowels removed.
+
+# For example, the string "This website is for losers LOL!" would become
+# "Ths wbst s fr lsrs LL!".
+
+# Note: for this kata y isn't considered a vowel.
+
+def disemvowel(string):
+    vowels = 'aeiouAEIOU'
+    for vowel in vowels:
+        string = string.replace(vowel, '')
+    return string
