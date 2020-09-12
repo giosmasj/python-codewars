@@ -364,13 +364,48 @@
 
 # Note: for this kata y isn't considered a vowel.
 
-def disemvowel(string):
-    vowels = 'aeiouAEIOU'
-    for vowel in vowels:
-        string = string.replace(vowel, '')
-    return string
+# def disemvowel(string):
+#     vowels = 'aeiouAEIOU'
+#     for vowel in vowels:
+#         string = string.replace(vowel, '')
+#     return string
 
 # best practice
 
-def disemvowel(string):
-    return string.translate(None, 'aeiouAEIOU')
+# def disemvowel(string):
+#     return string.translate(None, 'aeiouAEIOU')
+
+# Write an algorithm that will identify valid IPv4 addresses in
+# dot-decimal format. IPs should be considered valid if they consist of
+# four octets, with values between 0 and 255, inclusive.
+
+# Input to the function is guaranteed to be a single string.
+
+# Examples
+# Valid inputs:
+
+# 1.2.3.4
+# 123.45.67.89
+# Invalid inputs:
+
+# 1.2.3
+# 1.2.3.4.5
+# 123.456.78.90
+# 123.045.067.089
+# Note that leading zeros (e.g. 01.02.03.04) are considered invalid.
+# 6kyu
+# 9/11/2020
+
+def is_valid_IP(strng):
+    a = strng.split('.')
+    if len(a) != 4:
+        return False
+    for x in a:
+        if not x.isdigit():
+            return False
+        i = int(x)
+        if i > 0 and x.startswith('0'):
+            return False
+        if i < 0 or i > 255:
+            return False
+    return True
