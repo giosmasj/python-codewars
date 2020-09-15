@@ -424,3 +424,8 @@ def create_phone_number(n):
         n_as_string.append(''.join(str(x)))
     phone_number = "(" + "".join(n_as_string[0:3]) + " " + "".join(n_as_string[3:6] + "-" + "".join(n_as_string[6:10]))
     return phone_number
+
+# Best Practice:
+
+def create_phone_number(n):
+    return "({}{}{}) {}{}{}-{}{}{}{}".format(*n)
