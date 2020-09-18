@@ -442,10 +442,11 @@
 
 def spin_words(sentence):
     sentence_array = sentence.split(" ")
-    completed_array = []
+    reversed_sentence = []
     for word in sentence_array:
         if len(word) >= 5:
-            completed_array.append(word[::-1])
+            reversed_sentence.append(word[::-1])
         else:
-            completed_array.append(word)
-        return ' '.join(completed_array)
+            reversed_sentence.append(word)
+    new_sentence = ' '.join(reversed_sentence)
+    return new_sentence
