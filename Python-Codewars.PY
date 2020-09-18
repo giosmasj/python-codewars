@@ -418,14 +418,34 @@
 # The returned format must be correct in order to complete this challenge.
 # Don't forget the space after the closing parentheses!
 
-def create_phone_number(n):
-    n_as_string = []
-    for x in n:
-        n_as_string.append(''.join(str(x)))
-    phone_number = "(" + "".join(n_as_string[0:3]) + " " + "".join(n_as_string[3:6] + "-" + "".join(n_as_string[6:10]))
-    return phone_number
+# def create_phone_number(n):
+#     n_as_string = []
+#     for x in n:
+#         n_as_string.append(''.join(str(x)))
+#     phone_number = "(" + "".join(n_as_string[0:3]) + " " + "".join(n_as_string[3:6] + "-" + "".join(n_as_string[6:10]))
+#     return phone_number
 
 # Best Practice:
 
-def create_phone_number(n):
-    return "({}{}{}) {}{}{}-{}{}{}{}".format(*n)
+# def create_phone_number(n):
+#     return "({}{}{}) {}{}{}-{}{}{}{}".format(*n)
+
+# Write a function that takes in a string of one or more words, and
+# returns the same string, but with all five or more letter words
+# reversed (Just like the name of this Kata). Strings passed in will
+# consist of only letters and spaces. Spaces will be included only when
+# more than one word is present.
+
+# Examples: spinWords( "Hey fellow warriors" ) => returns "Hey wollef
+# sroirraw" spinWords( "This is a test") => returns "This is a test"
+# spinWords( "This is another test" )=> returns "This is rehtona test"
+
+def spin_words(sentence):
+    sentence_array = sentence.split(" ")
+    completed_array = []
+    for word in sentence_array:
+        if len(word) >= 5:
+            completed_array.append(word[::-1])
+        else:
+            completed_array.append(word)
+        return ' '.join(completed_array)
